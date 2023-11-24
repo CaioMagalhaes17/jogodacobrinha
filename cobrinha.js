@@ -37,13 +37,8 @@ function update() {
         return;
     }
     var img = new Image();
-        
-        // Defina o caminho da imagem
         img.src = "./selva.jpg";
-
-        // Espere a imagem carregar antes de desenhá-la no canvas
         img.onload = function() {
-            // Desenhe a imagem no canvas
             context.drawImage(img, 0, 0, board.width, board.height);
             context.fillStyle="orange";
             context.fillRect(comidaX, comidaY, blockSize, blockSize);
