@@ -37,6 +37,7 @@ function update() {
         return;
     }
     var img = new Image();
+    var points = document.getElementById("points");
         img.src = "./selva.jpg";
         img.onload = function() {
             context.drawImage(img, 0, 0, board.width, board.height);
@@ -45,9 +46,10 @@ function update() {
 
             if (cobraX == comidaX && cobraY == comidaY) {
                 corpoCobra.push([1]);
+                points.innerHTML = corpoCobra.length;
                 placeFood();
             }
-        
+            
             for (let i = corpoCobra.length-1; i > 0; i--) {
                 corpoCobra[i] = corpoCobra[i-1];
             }
